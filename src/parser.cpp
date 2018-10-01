@@ -12,9 +12,10 @@ void startInteractiveShell() {
 	std::string mathexpr;
 	while (true) {
 		std::cout << "> ";
-		std::cin >> mathexpr;
+		std::getline(std::cin, mathexpr);
 		if (mathexpr == "exit")
 			break;
+		stripSpaces(mathexpr);
 		std::cout << std::endl << evalexpr(mathexpr, 0u) << std::endl;
 	}
 }
